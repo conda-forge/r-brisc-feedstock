@@ -45,6 +45,7 @@ requirements:
     - r-pbapply
     - r-rdist
     - libblas
+    - liblapack
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
