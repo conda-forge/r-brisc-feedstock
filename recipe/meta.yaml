@@ -35,7 +35,6 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - libblas
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
@@ -45,6 +44,7 @@ requirements:
     - r-matrixstats
     - r-pbapply
     - r-rdist
+    - libblas
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
