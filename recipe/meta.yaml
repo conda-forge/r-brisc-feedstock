@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,9 +35,8 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - libblas
     - libgomp  # [linux]
-    - llvmp-openmp  # [osx]
+    - llvm-openmp  # [osx]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
@@ -45,6 +44,8 @@ requirements:
     - r-matrixstats
     - r-pbapply
     - r-rdist
+    - libblas
+    - liblapack
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
